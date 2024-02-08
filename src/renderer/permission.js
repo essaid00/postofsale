@@ -9,7 +9,7 @@ export function usePermission() {
     router.beforeEach(async (to, from, next) => {
         const { GenerateRoutes, routers } = usePermissionStore()
         const { GetUserInfo, token, roles, logOut } = useUserStore()
-        end = Performance.startExecute(`${from.path} => ${to.path} 路由耗时`) /// 路由性能监控
+        end = Performance.startExecute(`${from.path} => ${to.path} Le routage prend du temps`) /// 路由性能监控
         if (token) {
             if (to.path === '/login') {
                 next({ path: '/' })

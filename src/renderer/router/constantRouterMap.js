@@ -27,13 +27,13 @@ export default [
   {
     path: '/form',
     component: Layout,
-    meta: { title: '表单', icon: 'form', roles: ['admin', 'edit'] },
+    meta: { title: 'formulaire', icon: 'form', roles: ['admin', 'edit'] },
     children: [
       {
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: 'form' }
+        meta: { title: 'formulaire', icon: 'form' }
       }
     ]
   },
@@ -44,9 +44,9 @@ export default [
     children: [
       {
         path: 'index',
-        name: '表格',
+        name: 'table',
         component: () => import('@/views/table/index'),
-        meta: { title: '表格', icon: 'table' }
+        meta: { title: 'table', icon: 'table' }
       }
     ]
   },
@@ -70,9 +70,9 @@ export default [
     children: [
       {
         path: 'index',
-        name: '权限',
+        name: 'permission',
         component: () => import('@/views/permission/index'),
-        meta: { title: '权限', icon: 'table' }
+        meta: { title: 'permission', icon: 'table' }
       }
     ]
   },

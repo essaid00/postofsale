@@ -7,11 +7,11 @@ export const constantRouterMap = [{
   path: '/',
   component: Layout,
   redirect: '/dashboard',
-  name: '主页',
+  name: 'Page d accueil',
   hidden: true,
   children: [{
     path: 'dashboard',
-    name: '总览',
+    name: 'Aperçu',
     component: () => import('@/components/LandingPage')
   }]
 }, {

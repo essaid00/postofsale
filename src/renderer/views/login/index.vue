@@ -3,7 +3,7 @@
     <div class="login-from-box">
       <el-form class="login-form" autocomplete="on" :model="loginForm" :rules="loginRules" ref="loginFormRef"
         label-position="left">
-        <h3 class="title">后台管理框架</h3>
+        <h3 class="title">Cadre de gestion back-end</h3>
         <el-form-item prop="username">
           <span class="svg-container svg-container_login">
             <svg-icon icon-class="user" />
@@ -15,17 +15,17 @@
             <svg-icon icon-class="password"></svg-icon>
           </span>
           <el-input name="password" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.password"
-            autocomplete="on" placeholder="密码"></el-input>
+            autocomplete="on" placeholder="mot de passe"></el-input>
           <span class="show-pwd" @click="showPwd">
             <svg-icon :icon-class="pwdType === 'password' ? 'eye' : 'eye-open'" />
           </span>
         </el-form-item>
         <div class="login-btn">
-          <button type="button" class="btn" @click="handleLogin">登录</button>
+          <button type="button" class="btn" @click="handleLogin">Se connecter</button>
         </div>
         <div class="tips">
-          <span style="margin-right:20px;">用户名: admin或者editor</span>
-          <span>密码：随便什么都行</span>
+          <span style="margin-right:20px;">administrateur ou éditeur: admin editor</span>
+          <span>Mot de passe : tout fera l'affaire</span>
         </div>
       </el-form>
     </div>
@@ -42,14 +42,14 @@ const { login } = useUserStore()
 
 const validateUsername = (rule, value, callback) => {
   if (!isvalidUsername(value)) {
-    callback(new Error("请输入正确的用户名"));
+    callback(new Error("Veuillez entrer le nom d'utilisateur correct"));
   } else {
     callback();
   }
 };
 const validatePass = (rule, value, callback) => {
   if (value.length < 5) {
-    callback(new Error("密码不能小于5位"));
+    callback(new Error("Le mot de passe ne peut pas contenir moins de 5 caractères"));
   } else {
     callback();
   }
